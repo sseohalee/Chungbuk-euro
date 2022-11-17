@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Webpage Title -->
+    <title>충북으로</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarExample">
+    
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"></a> 
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Zinc</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#header">지역소개</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">여행후기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommend.html">여행지추천</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="#">Article Details</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="#">Terms Conditions</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="btn-solid-sm" href="login.html">로그인</a>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+    <!-- Test -->
+    <div id="tripTest" class="form-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 center" id="page1">
+                    <h2><br>여행자 정보</h2>
+                    <!-- 성별 -->
+                    <div class="test-box">
+                        <p class="p-heading">성별</p>
+                        <label class="test"><input type="radio" name="gender" value="F"><span>여성</span></label>
+                        <label class="test"><input type="radio" name="gender" value="M"><span>남성</span></label>
+                    </div>
+                    <!-- 나이 -->
+                    <div class="test-box">
+                        <p class="p-heading">연령대</p>
+                        <label class="test"><input type="radio" name="age" value="10"><span>10대</span></label>
+                        <label class="test"><input type="radio" name="age" value="20"><span>20대</span></label>
+                        <label class="test"><input type="radio" name="age" value="30"><span>30대</span></label>
+                        <label class="test"><input type="radio" name="age" value="40"><span>40대</span></label>
+                        <label class="test"><input type="radio" name="age" value="50"><span>50대↑</span></label>
+                    </div>
+                    <!-- 구성원 선택 -->
+                    <div class="test-box">
+                        <p class="p-heading">누구랑 함께</p>
+                        <label class="test"><input type="radio" name="member" value="친구"><span>친구</span></label>
+                        <label class="test"><input type="radio" name="member" value="연인"><span>연인</span></label>
+                        <label class="test"><input type="radio" name="member" value="가족"><span>가족</span></label>
+                        <label class="test"><input type="radio" name="member" value="혼자"><span>혼자</span></label>
+                        <label class="test"><input type="radio" name="member" value="모임"><span>모임</span></label>
+                    </div>
+                    <button type="button" class="btn-test-next" onclick='next();'>다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of Test -->
+
+
+    <!-- Footer -->
+    <div class="footer bg-gray">
+        <img class="decoration-city" src="images/decoration-city.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Pellentesque aliquet mi eu tortor dictum, non imperdiet ante viverra. Phasellus eget enim orci ut pellentes troc</h4>
+                    <div class="social-container">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-youtube fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of social-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-unstyled li-space-lg p-small">
+                        <li><a href="article.html">Article Details</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div> <!-- end of col -->
+                <div class="col-lg-3">
+                    <p class="p-small statement">Copyright © <a href="#">Your name</a></p>
+                </div> <!-- end of col -->
+                <div class="col-lg-3">
+                    <p class="p-small statement">Distributed By: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="images/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    	
+    <!-- Scripts -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>

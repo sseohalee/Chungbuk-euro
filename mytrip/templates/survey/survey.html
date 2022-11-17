@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Test -->
+    <div id="tripTest" class="form-1">
+        <div class="container">
+            <div class="row">
+                <form action="{{ url_for('survey.create', user_id=g.user.id) }}" method="post">
+                    <div class="col-lg-4 center" id="page1">
+                        <h2><br>여행자 정보</h2>
+                        <!-- 성별 -->
+                        <div class="test-box">
+                            <p class="p-heading">성별</p>
+                            <label class="test"><input type="radio" name="gender" value="F"><span>여성</span></label>
+                            <label class="test"><input type="radio" name="gender" value="M"><span>남성</span></label>
+                        </div>
+                        <!-- 나이 -->
+                        <div class="test-box">
+                            <p class="p-heading">연령대</p>
+                            <label class="test"><input type="radio" name="age" value="10"><span>10대</span></label>
+                            <label class="test"><input type="radio" name="age" value="20"><span>20대</span></label>
+                            <label class="test"><input type="radio" name="age" value="30"><span>30대</span></label>
+                            <label class="test"><input type="radio" name="age" value="40"><span>40대</span></label>
+                            <label class="test"><input type="radio" name="age" value="50"><span>50대↑</span></label>
+                        </div>
+                        <!-- 구성원 선택 -->
+                        <div class="test-box">
+                            <p class="p-heading">누구랑 함께</p>
+                            <label class="test"><input type="radio" name="member" value="친구"><span>친구</span></label>
+                            <label class="test"><input type="radio" name="member" value="연인"><span>연인</span></label>
+                            <label class="test"><input type="radio" name="member" value="가족"><span>가족</span></label>
+                            <label class="test"><input type="radio" name="member" value="혼자"><span>혼자</span></label>
+                            <label class="test"><input type="radio" name="member" value="모임"><span>모임</span></label>
+                        </div>
+                        <button type="button" class="btn-test-next" onclick='next();'>다음</button>
+                    </div>
+
+                    <div class="col-lg-4 center" id="page2" style="display:none;">
+                        <div class="test-box">
+                            <p class="p-heading">1️⃣ 어느 지역을 가볼까요?</p>
+                            <label class="test"><input type="radio" name="region" value="괴산군"><span>괴산</span></label>
+                            <label class="test"><input type="radio" name="region" value="단양군"><span>단양</span></label>
+                            <label class="test"><input type="radio" name="region" value="보은군"><span>보은</span></label>
+                            <label class="test"><input type="radio" name="region" value="영동군"><span>영동</span></label>
+                            <label class="test"><input type="radio" name="region" value="옥천군"><span>옥천</span></label>
+                            <label class="test"><input type="radio" name="region" value="음성군"><span>음성</span></label>
+                            <label class="test"><input type="radio" name="region" value="제천시"><span>제천</span></label>
+                            <label class="test"><input type="radio" name="region" value="증평군"><span>증평</span></label>
+                            <label class="test"><input type="radio" name="region" value="진천군"><span>진천</span></label>
+                            <label class="test"><input type="radio" name="region" value="청주시"><span>청주</span></label>
+                            <label class="test"><input type="radio" name="region" value="충주시"><span>충주</span></label>
+                            <label class="test"><input type="radio" name="region" value="랜덤"><span>골라주세요</span></label>
+                        </div>
+
+                        <button type="button" class="btn-test-next" onclick='next();'>다음</button>
+                    </div>
+
+                    <div class="col-lg-4 center" id="page3" style="display:none;">
+                        <div class="test-box">
+                            <p class="p-heading">2️⃣ 선호하는 관광 스타일을 모두 골라주세요!</p>
+                            <p style="font-weight:normal; text-align:center; margin-top:15px; margin-bottom:-4px; font-size:13px;">----- 명소 -----</p>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="자연명소"><span>🏞️ 자연명소</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="지역명소"><span>🌉 지역명소</span></label>
+                            <p style="font-weight:normal; text-align:center; margin-top:15px; margin-bottom:-4px; font-size:13px;">----- 자연 -----</p>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="호수"><span>🛥️ 호수</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="동굴"><span>🪨동굴</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="산"><span>⛰️ 산</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="계곡"><span>🌊계곡</span></label>
+                            <p style="font-weight:normal; text-align:center; margin-top:15px; margin-bottom:-4px; font-size:13px;">----- 힐링 -----</p>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="공원"><span>🚶🏻‍♀️공원</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="휴양림"><span>🏕️ 휴양림</span></label>
+                            <p style="font-weight:normal; text-align:center; margin-top:15px; margin-bottom:-4px; font-size:13px;">----- 활동 -----</p>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="체험"><span>🤲🏻 체험</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="테마파크"><span>🎡 테마파크</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="액티비티"><span>🪂 액티비티</span></label>
+                            <p style="font-weight:normal; text-align:center; margin-top:15px; margin-bottom:-4px; font-size:13px;">----- 관람 -----</p>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="수목원"><span>🌺 수목원</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="박물관"><span>🏛 박물관</span></label>
+                            <label class="test"><input type="checkbox" name="tour_keyword" value="동물원"><span>🐥 동물원</span></label>
+
+                        </div>
+
+                        <button type="button" class="btn-test-next" onclick='next();'>다음</button>
+                    </div>
+
+                    <div class="col-lg-4 center" id="page4" style="display:none;">
+                        <div class="test-box">
+                            <p class="p-heading">3️⃣ 무슨 음식을 더 좋아하세요?</p>
+                            <label class="test"><input type="radio" name="food" value="한식"><span>한식</span></label>
+                            <label class="test"><input type="radio" name="food" value="일식/수산물"><span>일식</span></label>
+                            <label class="test"><input type="radio" name="food" value="중식"><span>중식</span></label>
+                            <label class="test"><input type="radio" name="food" value="양식"><span>양식</span></label>
+                            <label class="test"><input type="radio" name="food" value="기타"><span>기타</span></label>
+                        </div>
+                        <div class="test-box">
+                            <p class="p-heading">4️⃣ 어떤 걸 제일 중요하게 생각하시나요?</p>
+                            <label class="test"><input type="radio" name="food_keyword" value="맛"><span>맛</span></label>
+                            <label class="test"><input type="radio" name="food_keyword" value="위생"><span>위생</span></label>
+                            <label class="test"><input type="radio" name="food_keyword" value="분위기"><span>분위기</span></label>
+                            <label class="test"><input type="radio" name="food_keyword" value="웨이팅"><span>웨이팅</span></label>
+                            <label class="test"><input type="radio" name="food_keyword" value="유명한"><span>유명한</span></label>
+                        </div>
+
+                        <button type="submit" class="btn-test-next">완료</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of Test -->
+{% endblock %}

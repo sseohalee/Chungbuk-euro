@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 center">
+                <div class="survey_result">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="alternative">
+                    <p>
+                        나만의 일정이<br>
+                        완성되었습니다!
+                    </p>
+                    <a class="btn-solid-lg" href="{{ url_for('main.index') }}">메인으로</a>
+                    <a class="btn-solid-lg" href="{{ url_for('myinfo.myinfo') }}">마이페이지</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

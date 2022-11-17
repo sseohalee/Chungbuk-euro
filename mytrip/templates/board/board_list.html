@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>여행지 추천</h1>
+                    <p class="p-large">충청북도 여행 중 좋았던 곳을 자유롭게 알려주세요!</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <div class="container rec-div board-list">
+        <div class="row">
+            <table class="col-xl-10 offset-xl-1 rec-table">
+                <thead>
+                    <tr>
+                        <th class="col-xl-1">No</th>
+                        <th class="col-xl-5">제목</th>
+                        <th class="col-xl-2">글쓴이</th>
+                        <th class="col-xl-2">작성시간</th>
+                    </tr>
+                </thead>
+                {% if board_list %}
+                <tbody>
+                    {% for board in board_list %}
+                    <tr>
+                        <td>{{ board.id }}</th>
+                        <td>{{ board.subject }}</th>
+                        <td>익명</th>
+                        <td>{{ board.create_date|datetime }}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% else %}
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>청주 짱이네 추천</td>
+                        <td>고구밍</td>
+                        <td>2022년 11월 16일</td>
+                    </tr>
+                </tbody>
+                {% endif %}
+            </table>
+            <div class="col-xl-10 offset-xl-1">
+                {% if g.user %}
+                <a class="btn-solid-lg" href="{{ url_for('board.create') }}">글 작성</a>
+                {% else %}
+                <a class="btn-solid-lg" style="cursor:pointer;" onclick="alert('로그인 후 이용해 주세요.');" href="{{ url_for('auth.login') }}">글 작성</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

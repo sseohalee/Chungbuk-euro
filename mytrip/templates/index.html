@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-4">
+                    <div class="text-container">
+                        <h1 class="h1-large">충청북도 매력에 <br>빠지러 가기</h1>
+                        <p class="p-large">몇 가지 조사를 통해 당신에게 <br>딱맞는 여행 일정을 만들어 드릴게요!</p>
+                        {% if g.user %}
+                        <a class="btn-solid-lg" href="{{ url_for('survey.survey_start') }}">나만의 여행지 추천 받기</a>
+                        {% else %}
+                        <a class="btn-solid-lg" style="cursor:pointer;" onclick="alert('로그인 후 이용해 주세요.');" href="{{ url_for('auth.login') }}">나만의 여행지 추천 받기</a>
+                        {% endif %}
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-8">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/map.png') }}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+{% endblock %}

@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 info-header">
+                    <h1>지역 소개</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <div class="container rec-div">
+        <div class="row">
+            <!-- Filter
+                    <div class="button-group filters-button-group region-filter">
+                        <button class="button is-checked" data-filter="*">전체</button>
+                        <button class="button" data-filter=".region-si">시</button>
+                        <button class="button" data-filter=".region-goon">군</button>
+                    </div> end of button group
+            -->
+
+            <div class="col-xl-5 offset-xl-1" style="display:inline-block;">
+                <div class="region-card-box region-si">
+                    <div class="region-title">
+                        <h4>청주</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/cheongju.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        누구나 대통령이 될 수 있는 청주. <br>청주시 청남대는 역대 대통령의 흔적이 남아있는 곳으로 대통령
+                        업무 체험 공간이 마련되어 있다. <br> 천년의 역사가 숨 쉬는 상당산성은 가벼운 산행 코스로 제격이다.<br>
+                        단돈 천 원에 즐기는 청주 동물원과 글로벌 명품시장으로 발돋움한 육거리종합시장의 골목골목을
+                        돌아보는 것도 청주 대표 여행 코스!
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#청남대 #문암생태공원 #국립청주박물관 #미동산수목원 #수암골 #청원생명축제</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xr-1 region-card" style="display:inline-block;">
+                <div class="region-card-box region-si">
+                    <div class="region-title">
+                        <h4>제천</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/jecheon.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        문화재의 집합소 충북 제천시.<br>
+                        청풍문화재단지를 시작으로 국내에서 가장 오래된 저수지 의림지를 비롯해 한국 천주교 전파의 진원지인 베론성지는 편히 둘러보기에도 좋다.<br>
+                        월악산에 둘러싸여 있는 송계계곡은 울창한 숲과 깊은 계곡이 있어 여름철 피서지로 인기가 높다.<br><br>
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#용추폭포유리전망대 #옥순봉 출렁다리 #청풍호반케이블카 #제천 비행장</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>충주</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/chungju.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        내륙에 바다가 있는 충주. <br>
+                        충주호는 드라이브 코스로 좋으며, 동심이 가득한 라바 랜드는 충주의 새로운 관광지로 부상하고 있다. <br>
+                        세계 유일 모든 술의 역사를 담고 있는 리쿼리움에서 시음을 하는 것도 소소한 즐거움! <br>
+                        충주 명물 무학시장 순대 골목도 빼놓을 수 없는 코스 중 하나!
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#비내섬 #중앙탑사적공원 #충주호 #수주팔봉 #활옥동굴 #우륵문화제 #충주시문화회관</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xr-1 region-goon region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>단양</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/danyang.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        마늘의 고장 충북 단양.<br>
+                        단양 구경시장에 들러 마늘만두부터 마늘통닭까지 마늘로 만든 단양의 특미를 맛보는 건 필수 코스! <br>
+                        단양팔경 중에도 대표 명소인 도담삼봉은 많은 이들이 발걸음 한다. <br>
+                        바보 온달과 평강공주의 사랑 이야기가 담긴 온달산성과 태고의 신비를 느낄 수 있는 고수동굴도 빼놓을 수 없다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#보발재 #만천하스카이워크 #사인암 #온달관광지 #단양강잔도</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>괴산</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/goesan.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        웬만한 사극에는 다 출연했을 만큼 베테랑 조연자가 숨어있는 괴산군. <br>
+                        수옥 폭포가 그 주인공이다. 수옥 폭포에서 연풍 방면으로 내려오다 보면 길가에 나란히 자리하고 있는 쌍둥이 부처 '원풍리 마애불좌상'을 볼 수 있다.<br>
+                        총 17km의 사연 깊은 연풍성지길은 성지순례 코스로 좋으며, 산막이옛길은 괴산군 여행지로 빼놓을 수 없는 대표 명소이다.<br>
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#문광저수지 #화양구곡 #수옥폭포 #갈론계곡 #초원의집</p><br>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xr-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>증평</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/jeungpyeong.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        증평의 알프스라 불리는 좌구산은 증평군의 대표 관광지이다.<br>
+                        좌구산 전체에는 다양한 즐길 거리가 곳곳에 흩어져 있어 아이와 함께하는 하루 여행 코스로 좋다. <br>
+                        좌구산 휴양림에 마련된 숲 속 모험 시설은 나이와 신장 조건에 따라 코스가 나뉘며 다양한 체험이 가능하다. <br>
+                        밤이 되면 천문대에 올라 밤하늘을 구경하는 재미가 있다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#좌구산자연휴양림 #증평군농업기술센터 #블랙스톤 벨포레 목장 #보강천미루나무숲</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>옥천</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/okcheon.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        시인 정지용의 고장 충북 옥천. <br>
+                        그의 생가 옆에 마련된 '정지용 문학관' 에서는 현대시의 흐름을 엿볼 수 있고,
+                        문학교실에서는 단체관람객을 대상으로 각종 세미나와 문학강좌도 열고 있으니 여행 시 참고하면 좋다. <br>
+                        장령산 자연휴양림은 물놀이와 취사도 가능해 여름 캠핑 장소로 제격이며, 일출과 운해가 아름다운 용암사도 빼놓을 수 없다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#부소담악 #장계관광지 #장령산자연휴양림 #화인산림욕장 #정지용문학관 #어탕국수</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xr-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>영동</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/yeongdong.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        한국의 알프스 영동. 별칭만큼이나 수려한 산세를 품고 있다. <br>
+                        대표적인 영국사를 비롯해 비봉산, 봉황대 등은 양산 팔경에 속한다. <br>
+                        달도 머물다 간다는 월류봉은 우암 송시열의 많은 시문학을 남긴 곳이며, <br>
+                        송호국민관광지는 전기 사용도 불가능하고 캠핑 장비도 손수레를 이용해 하나하나
+                        옮겨야 하는 번거로움이 있지만 진짜 아날로그 캠핑을 즐길 수 있다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#월류봉 #송호국민관광지 #영동와인터널 #도마령 #영동영국사은행나무</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>보은</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/boeun.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        자연을 따라 문화재를 찾아가는 재미가 있는 보은. <br>
+                        등산로로 유명한 속리산 문장대에 오르면 한눈에 내려다보이는 속리산 풍경이 장관을 이룬다. <br>
+                        소나무 숲길인 오리숲을 따라 걷다 보면 국보와 보물을 가득 품고 있는 법주사를 마주하게 된다. <br>
+                        속리산의 명성에 가려져 잘 알려지지는 않았지만, 구병산은 가을 단풍이 멋스럽기로 유명해 가을 산행지로 제격이다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#말티재 #속리산 #법주사 #정이품송 #삼년산성</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xr-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>음성</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/eumseong.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        시대와 국경을 뛰어넘는 만남이 존재하는 음성. <br>
+                        음성 생극면에 위치한 큰 바위 얼굴 조각 공원에는 예수님부터 싸이까지 세계 각국의 3000여 명이 넘는 인물이 한자리에 모여있다. <br>
+                        물속에 뿌리내린 왕버들 세 그루가 인상적인 원남 저수지와 충청북도에서 가장 오래된 역사를 자랑하는 성당인 감곡성당은 가볍게 거닐기에 좋다.<br><br>
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#백야자연휴양림 #봉학골산림욕장 #큰바위얼굴 테마파크 #반기문생가</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 region-card" style="display:inline-block;">
+                <div class="region-card-box">
+                    <div class="region-title">
+                        <h4>진천</h4>
+                    </div>
+                    <div class="region-card-image-box">
+                        <img src="{{ url_for('static', filename='images/jincheon.jpg') }}">
+                    </div>
+                    <div class="region-info">
+                        <hr style="height:0.5px;">
+                        국운을 내다보는 예언자가 존재하는 진천.<br>
+                        진천을 대표하는 농다리는 실제로 6.25 전쟁 때는 농다리에서 울음소리가 들려왔고, 박정희 대통령 서거 때는 상판이 떴다고 할 만큼 신비롭고 독특한 구조의 다리이다.<br>
+                        초평저수지는 충주호와 함께 충북 낚시터의 양대 산맥으로 유명하며, 김유신 장군의 영정을 모신 사당인 길상사는 산책 코스로 좋다.
+                        <hr style="width:50px; height:5px; color:pink; margin:0 auto; margin-top:15px; margin-bottom:15px; opacity:1;">
+                        <p>#진천농다리 #한반도지형전망공원 #마차박물관체험마을 #길상사 #백곡저수지 #빙어낚시</p>
+                    </div>
+                </div>
+
+                <div style="height:50px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+<div class="container rec-div">
+        <div class="row">
+
+        </div>
+    </div>
+
+{% endblock %}

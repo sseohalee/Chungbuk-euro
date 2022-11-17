@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header -->
+    <header class="ex-header" style="padding-top:6rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1" style="height:30px;">
+                    <h1>여행지 추천</h1>
+                    <p class="p-large">충청북도 여행 중 좋았던 곳을 자유롭게 알려주세요!</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+<!-- 글 등록 -->
+<div class="container login" style="width:400px;margin-top:10px;">
+    <h5 class="my-3 border-bottom pb-2" style="text-align:center;">글 등록</h5>
+    <form method="post" class="my-3">
+        {{ form.csrf_token }}
+        <!-- 오류표시 Start -->
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for field, errors in form.errors.items() %}
+            <strong>{{ form[field].label }}</strong>
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- 오류표시 End -->
+
+        <div class="mb-3">
+            <label for="subject">제목</label>
+            <input type="text" class="form-control" name="subject" id="subject"
+                value="{{ form.subject.data or '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="content">내용</label>
+            <textarea class="form-control" name="content"
+                id="content" rows="5">{{ form.content.data or '' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">완료</button>
+    </form>
+</div>
+<div style="width:100%;height:200px;"></div>
+
+
+{% endblock %}

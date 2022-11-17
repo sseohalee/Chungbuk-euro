@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 info-header">
+                    <h1>나의 일정</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <div class="container rec-div">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1 schedule-detail">
+                <h3>{{ tour.region }}</h3>
+                <p>
+                    {% set tour_keyword=survey.tour_keyword.split('|') %}
+                    {% for keyword in tour_keyword %}
+                    <span class="schedule-tag">#{{ keyword }}</span>
+                    {% endfor %}<br>
+                </p>
+                <div id="map" style="width:100%;height:400px;">
+                    <!--<img src="{{ url_for('static',filename='images/location.png') }}"> -->
+                </div>
+                <div class="schedule-datail-box">
+                    <h5>1️⃣점심</h5>
+                    <span class="half_HL">{{lunch.name}}</span> <br>
+                    🍚 {{ lunch.cate }} | ⭐ <b>{{ lunch.star }}</b>/5 ({{ lunch.qty }})<br>
+                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                </div>
+                <div class="schedule-datail-box">
+                    <h5>2️⃣관광 명소</h5>
+                    <span class="half_HL">{{ tour.name }}</span> <br>
+                    🗼 {{ tour.cate }} <br>
+                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+
+                </div>
+                <div class="schedule-datail-box">
+                    <h5>3️⃣카페</h5>
+                    <span class="half_HL">{{ cafe.name }}</span> <br>
+                    🍰 {{ cafe.cate }} | ⭐ <b>{{ cafe.star }}</b>/5 ({{ cafe.qty }})<br>
+                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                </div>
+                <div class="schedule-datail-box">
+                    <h5>4️⃣저녁</h5>
+                    <span class="half_HL">{{ dinner.name }}</span> <br>
+                    🍸 {{ dinner.cate }} | ⭐ <b>{{ dinner.star }}</b>/5 ({{ dinner.qty }})<br>
+                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                </div>
+                <div style="height:50px;"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+var HOME_PATH = window.HOME_PATH || '.';
+
+// 지도 중앙
+var mapOptions = {
+    center: new naver.maps.LatLng({{ lunch.lat }}, {{ lunch.lng }}),
+    zoom: 12
+};
+
+// 지도 생성
+var map = new naver.maps.Map('map', mapOptions);
+
+// 마커 생성
+var lunchMarker = new naver.maps.Marker({
+    position: new naver.maps.LatLng({{ lunch.lat }}, {{ lunch.lng }}),
+    map: map
+});
+var dinnerMarker = new naver.maps.Marker({
+    position: new naver.maps.LatLng({{ dinner.lat }}, {{ dinner.lng }}),
+    map: map
+});
+var cafeMarker = new naver.maps.Marker({
+    position: new naver.maps.LatLng({{ cafe.lat }}, {{ cafe.lng }}),
+    map: map
+});
+
+// 정보창 내용
+var lunchString = [
+        '<div class="iw_inner" style="padding-left:10px;padding-right:10px;">',
+        '   <p style="font-size:10px;margin-bottom:-10px;"><점심></p>',
+        '   <p style="font-size:12px;margin-bottom:-10px;text-align:center;"><b>{{ lunch.name }}</b></p>',
+        '   <p style="font-size:10px;margin-top:-10px;margin-bottom:-8px;">🍚{{ lunch.cate }}',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var dinnerString = [
+        '<div class="iw_inner" style="padding-left:10px;padding-right:10px;">',
+        '   <p style="font-size:10px;margin-bottom:-10px;"><저녁></p>',
+        '   <p style="font-size:12px;margin-bottom:-10px;text-align:center;"><b>{{ dinner.name }}</b></p>',
+        '   <p style="font-size:10px;margin-top:-10px;margin-bottom:-8px;">🍸{{ dinner.cate }}',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var cafeString = [
+        '<div class="iw_inner" style="padding-left:10px;padding-right:10px;">',
+        '   <p style="font-size:10px;margin-bottom:-10px;"><카페></p>',
+        '   <p style="font-size:12px;margin-bottom:-10px;text-align:center;"><b>{{ cafe.name }}<b></p>',
+        '   <p style="font-size:10px;margin-top:-10px;margin-bottom:-8px;">🍰{{ cafe.cate }}',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+// 정보창 생성
+var lunchInfowindow = new naver.maps.InfoWindow({
+    content: lunchString
+});
+
+var dinnerInfowindow = new naver.maps.InfoWindow({
+    content: dinnerString
+});
+
+var cafeInfowindow = new naver.maps.InfoWindow({
+    content: cafeString
+});
+
+// 마커 클릭시
+naver.maps.Event.addListener(lunchMarker, "click", function(e) {
+    if (lunchInfowindow.getMap()) {
+        lunchInfowindow.close();
+    } else {
+        lunchInfowindow.open(map, lunchMarker);
+    }
+});
+
+naver.maps.Event.addListener(dinnerMarker, "click", function(e) {
+    if (dinnerInfowindow.getMap()) {
+        dinnerInfowindow.close();
+    } else {
+        dinnerInfowindow.open(map, dinnerMarker);
+    }
+});
+
+naver.maps.Event.addListener(cafeMarker, "click", function(e) {
+    if (cafeInfowindow.getMap()) {
+        cafeInfowindow.close();
+    } else {
+        cafeInfowindow.open(map, cafeMarker);
+    }
+});
+
+lunchInfowindow.open(map, lunchMarker);
+
+// 폴리라인
+var polyline = new naver.maps.Polyline({
+    map: map,
+    path: [
+        new naver.maps.LatLng({{ lunch.lat }}, {{ lunch.lng }}),
+        new naver.maps.LatLng({{ cafe.lat }}, {{ cafe.lng }}),
+        new naver.maps.LatLng({{ dinner.lat }}, {{ dinner.lng }})
+    ],
+    strokeColor: '#F986A6',
+    strokeOpacity: 0.7,
+    strokeWeight: 5
+});
+
+</script>
+
+{% endblock %}

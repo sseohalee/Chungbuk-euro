@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 info-header">
+                    <h1>마이페이지</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <div class="container rec-div">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h3>나의 일정</h3>
+                {% for survey in g.user.survey_set %}
+                <div class="my-schedule-box" onclick="location.href='{{ url_for('myinfo.schedule',survey_id=survey.id ) }}'">
+                    <div class="schedule-info">
+                        <h5>{{ survey.region }}</h5>
+                        1박 2일<br>
+                        {% set tour_keyword=survey.tour_keyword.split('|') %}
+                        {% for keyword in tour_keyword %}
+                        <span class="schedule-tag" style="padding-top:0px;">#{{ keyword }}</span>
+                        {% endfor %}
+                        <br>
+                        <div class="schedule-save-date">{{ survey.survey_date|datetime }} 저장</div>
+                    </div>
+                    <div class="schedule-pic">
+                        <img src="{{ url_for('static',filename='images/{}.jpg'.format(region_name[survey.region])) }}">
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div style="height:50px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
