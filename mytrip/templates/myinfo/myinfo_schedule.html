@@ -31,26 +31,24 @@
                     <h5>1️⃣점심</h5>
                     <span class="half_HL">{{lunch.name}}</span> <br>
                     🍚 {{ lunch.cate }} | ⭐ <b>{{ lunch.star }}</b>/5 ({{ lunch.qty }})<br>
-                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                    <button type="submit" class="schedule-btn" onclick="location.href='{{ lunch.url }}'">맛집 정보</button>
                 </div>
                 <div class="schedule-datail-box">
                     <h5>2️⃣관광 명소</h5>
                     <span class="half_HL">{{ tour.name }}</span> <br>
                     🗼 {{ tour.cate }} <br>
-                    <button type="submit" class="schedule-btn">비슷한 장소</button>
-
                 </div>
                 <div class="schedule-datail-box">
                     <h5>3️⃣카페</h5>
                     <span class="half_HL">{{ cafe.name }}</span> <br>
                     🍰 {{ cafe.cate }} | ⭐ <b>{{ cafe.star }}</b>/5 ({{ cafe.qty }})<br>
-                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                    <button type="submit" class="schedule-btn" onclick="location.href='{{ cafe.url }}'">맛집 정보</button>
                 </div>
                 <div class="schedule-datail-box">
                     <h5>4️⃣저녁</h5>
                     <span class="half_HL">{{ dinner.name }}</span> <br>
                     🍸 {{ dinner.cate }} | ⭐ <b>{{ dinner.star }}</b>/5 ({{ dinner.qty }})<br>
-                    <button type="submit" class="schedule-btn">비슷한 장소</button>
+                    <button type="submit" class="schedule-btn" onclick="location.href='{{ dinner.url }}'">맛집 정보</button>
                 </div>
                 <div style="height:50px;"></div>
             </div>

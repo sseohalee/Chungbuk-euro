@@ -48,7 +48,8 @@ def schedule(survey_id):
         'star': lunch_data['naver_star_point'],
         'qty': format(int(lunch_data['naver_visitor_review_qty']), ","),
         'lat':lunch_data['lon'],
-        'lng':lunch_data['lat']
+        'lng':lunch_data['lat'],
+        'url':lunch_data['naver_map_url']
     }
     dinner_data = data_restaurant.loc[result.dinner]
     dinner = {
@@ -57,7 +58,8 @@ def schedule(survey_id):
         'star': dinner_data['naver_star_point'],
         'qty': format(int(dinner_data['naver_visitor_review_qty']), ","),
         'lat': dinner_data['lon'],
-        'lng': dinner_data['lat']
+        'lng': dinner_data['lat'],
+        'url': dinner_data['naver_map_url']
     }
     cafe_data = data_restaurant.loc[result.cafe]
     cafe = {
@@ -66,7 +68,8 @@ def schedule(survey_id):
         'star': cafe_data['naver_star_point'],
         'qty': format(int(cafe_data['naver_visitor_review_qty']), ","),
         'lat': cafe_data['lon'],
-        'lng': cafe_data['lat']
+        'lng': cafe_data['lat'],
+        'url': cafe_data['naver_map_url']
     }
 
     return render_template('myinfo/myinfo_schedule.html', survey=survey, tour=tour, lunch=lunch, dinner=dinner, cafe=cafe)
