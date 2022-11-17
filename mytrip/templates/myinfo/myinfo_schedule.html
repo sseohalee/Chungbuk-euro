@@ -37,6 +37,9 @@
                     <h5>2️⃣관광 명소</h5>
                     <span class="half_HL">{{ tour.name }}</span> <br>
                     🗼 {{ tour.cate }} <br>
+                    {% if tour.acc | length %}
+                    <div class="schedule-detail-cate">{{ tour.acc }}</div>
+                    {% endif %}
                 </div>
                 <div class="schedule-datail-box">
                     <h5>3️⃣카페</h5>

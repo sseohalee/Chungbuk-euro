@@ -39,7 +39,8 @@ def schedule(survey_id):
     tour = {
         'name': tour_data['name'],
         'cate': tour_data['sort'],
-        'region': tour_data['si_2']
+        'region': tour_data['si_2'],
+        'acc':tour_data['cate']
     }
     lunch_data = data_restaurant.loc[result.lunch]
     lunch = {

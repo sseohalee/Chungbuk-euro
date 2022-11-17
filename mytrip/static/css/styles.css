@@ -974,6 +974,18 @@ select {
 	padding-right:30px;
 }
 
+.schedule-detail-cate{
+    display:inline-block;
+    padding-left:20px;
+    padding-right:20px;
+    margin-top:15px;
+    font-size:12px;
+    background:#E2E2E2;
+    color:grey;
+    font-weight:bold;
+    border-radius: 10px;
+}
+
 .half_HL{
 	background: linear-gradient(to top, #FFE400 50%, transparent 50%);
 	font-weight: bold;
