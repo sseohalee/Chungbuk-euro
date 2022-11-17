@@ -9,8 +9,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 #CSV로딩
 def get_data_from_csv():
-    data_restaurant = pd.read_csv("../../static/data//fin.csv", encoding='cp949', thousands=',', index_col=0)
-    data_trip = pd.read_csv("../../static/data//trip.csv", encoding='cp949', index_col=0)
+    data_restaurant = pd.read_csv("/home/ubuntu/projects/trip/mytrip/static/data/fin.csv", encoding='cp949', thousands=',', index_col=0)
+    data_trip = pd.read_csv("/home/ubuntu/projects/trip/mytrip/static/data/trip.csv", encoding='cp949', index_col=0)
 
     return data_restaurant, data_trip
 
