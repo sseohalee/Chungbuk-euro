@@ -3,7 +3,6 @@ from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-import config
 
 # db, migrate 객체는 create 함수 밖에서 생성
 db = SQLAlchemy()
@@ -13,7 +12,7 @@ migrate = Migrate()
 def create_app():
     app = Flask(__name__)  # name 변수에는 모듈명이 담김
     # config 파일 작성 항목 읽기
-    app.config.from_object(config)
+    app.config.from_envvar('APP_CONFIG_FILE')
 
     # ORM   -> 밖에 있는 객체 앱에 등록
     db.init_app(app)
